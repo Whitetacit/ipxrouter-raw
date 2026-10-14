@@ -13,16 +13,16 @@ jobs:
         os: [ubuntu-22.04-arm]
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
 
     - name: Set up Go
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v7
 
     - name: Build
       working-directory: server
       run: go build -o server -v main.go
       
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v7
       with:
         name: server-${{ matrix.os }}
         path: server/server*
